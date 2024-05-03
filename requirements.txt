@@ -1,0 +1,12 @@
+bs4
+chromadb
+gpt4all
+langchain-nomic
+langchain_community
+langchainhub
+langchain
+langgraph
+python-dotenv
+requests
+tavily-python
+tiktoken
