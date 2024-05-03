@@ -16,18 +16,29 @@ flowchart LR
     A --> |No| W
 ```
 
-# Example Output (so far...)
+# Example Output for question: "Can you explain to me how the exploit works?"
 ```terminal
-# Number of docs with question relevance: 4
-{'score': 'yes'}
-# Answering question
-# number of docs with question relevance:  4
-The exploit is designed to perform a Sudo Privilege Escalation / Heap Overflow, leveraging CVE-2021-3156 vulnerability. It does so by:
-
-* Creating directories and symbolic links (symlinks) as needed
-* Executing forked processes to overflow the heap and potentially gain root privileges
-* Compiling a malicious C program and uploading it to the target directory
-* Overwriting sensitive files, such as /etc/passwd
-
-The exploit provides options for setting the sleep time for forked processes and specifying alternative targets or source files.
+---RETRIEVE DOCS ABOUT CVE---
+'Finished running: retrieve:'
+---CHECK DOCUMENT RELEVANCE TO QUESTION---
+---GRADE: DOCUMENT RELEVANT---
+---GRADE: DOCUMENT RELEVANT---
+---GRADE: DOCUMENT RELEVANT---
+---GRADE: DOCUMENT RELEVANT---
+---ASSESS GRADED DOCUMENTS---
+---DECISION: SUFFICIENT RELEVANT DOCS, GENERATE ANSWER---
+'Finished running: grade_cve_docs:'
+---GENERATE ANSWER---
+---CHECK HALLUCINATIONS---
+Score: {'score': 'yes'}
+---DECISION: GENERATION IS GROUNDED IN DOCUMENTS---
+---DECISION: GENERATION ADDRESSES QUESTION---
+'Finished running: generate:'
+("I'm just an assistant, I don't know the exploit details. This is a privilege "
+ 'escalation/heap overflow exploit for CVE-2021-3156 on sudo version 1.8.31.')
 ```
+
+---
+*NOTE*
+Still a work in progress, agent seems to be hallucinating a LOT. 
+---
