@@ -15,3 +15,19 @@ flowchart LR
     A --> |Yes| Answer
     A --> |No| W
 ```
+
+# Example Output (so far...)
+```terminal
+# Number of docs with question relevance: 4
+{'score': 'yes'}
+# Answering question
+# number of docs with question relevance:  4
+The exploit is designed to perform a Sudo Privilege Escalation / Heap Overflow, leveraging CVE-2021-3156 vulnerability. It does so by:
+
+* Creating directories and symbolic links (symlinks) as needed
+* Executing forked processes to overflow the heap and potentially gain root privileges
+* Compiling a malicious C program and uploading it to the target directory
+* Overwriting sensitive files, such as /etc/passwd
+
+The exploit provides options for setting the sleep time for forked processes and specifying alternative targets or source files.
+```
